@@ -1,0 +1,247 @@
+
+/*********BASIC SETUP***************/
+
+* {
+	margin: 0;
+	padding : 0;
+	box-sizing: border-box;
+}
+
+html {
+	background-color: #fff;
+	color: #555;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	text-rendering: optimizeLegibility;
+}
+
+
+/*********REUSABLE COMPONENTS***************/
+
+.row {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+section { /*add white space*/
+	padding: 80px 0; /*no margin at left and right*/
+
+}
+
+.box {
+	padding: 1%;
+}
+
+
+
+/*********HEADINGS***************/
+h1, h2, h3 {
+
+
+	font-weight: 300;/* // decrease boldness*/
+	text-transform: uppercase;
+	
+
+
+}
+
+h1 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	color: #fff; /*white*/
+	font-size: 240%; /*40px because we declare 20 in html global tag*/
+	word-spacing: 4px;
+	letter-spacing: 1px;
+}
+
+h2 {
+	font-size: 180%
+	word-spacing:2px;
+	text-align: center;
+	margin-bottom: 30px;
+	letter-spacing: 1px;
+}
+
+/*little yelow line between h2 and text*/
+h2:after {
+	display: block;
+	height: 2px;
+	background-color: #e67e22;
+	content:""; /*we have to specify content if after is use*/
+	width: 100px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+
+}
+
+h3 {
+	font-size: 110%;
+	margin-bottom: 15px;	
+}
+/*********PARAGRAPHS***************/
+.long-copy {
+	line-height: 145%;
+	width: 70%;
+	margin-left: 15%; /*15 right and 15 left + 70% = 100*/
+}
+
+.box p {
+	font-size: 90%;
+	line-height: 145%
+}
+
+/*********ICONS***************/
+
+ion-icon {
+	font-size: 350%;
+	display: block;
+	color:#e67e22;
+	margin-bottom: 10px;
+}
+
+/*********BUTTONS***************/
+
+
+/*buttons are links in general in css so can have different states
+	-link , visited, active (when we clicked) and hover (mouseover)*/
+
+
+
+.btn:link, /*this are pseudo codes, link and visited have same style*/
+.btn:visited {
+	display: inline-block; /*to make it inline block*/
+	padding: 10px 30px; 
+	font-weight: 300;
+	text-decoration: none; /*// to delete the undeline*/
+	border-radius: 200px;  /*making it round*/
+
+	/*transiton from one color to another using just css
+		upon hover  will change slow */
+	transition: background-color 0.2s,  border 0.2s, color 0.2s; 
+
+}
+
+.btn-full:link,
+.btn-full:visited {
+	background-color: #e67e22; 
+	border: 1px solid #e67e22; /*this is added to make it look same size*/
+	/*height and width of element is the content + padding + border*/
+	color: #fff;
+	margin-right: 15px; /*to have space*/
+
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+	border: 1px solid #e67e22;
+	color: #e67e22;
+}
+
+.btn:hover,
+.btn:active {
+	background-color: #cf6d17 ;  /*darker orange color*/
+
+}
+
+/* to have hover and active state*/
+.btn-full:hover,
+.btn-full:active {
+	border: 1px solid #cf6d17; 
+
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+	border: 1px solid #cf6d17;
+	color: #fff;
+}
+
+
+/*********HEADERS***************/
+
+
+
+header {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(resources/img/hero.jpg);
+		/*to make image darker use linear gradient*/
+	background-size: cover;
+	background-position: center;
+	height: 100vh; /*to make image 100 %*/
+}
+
+.hero-text-box {
+	position: absolute; /*to vertically and horizontally center*/
+	width: 1140px;
+	top: 50%; /*text will be moved down*/
+	left : 50%; /*-->adjusted to left*/
+	transform: translate(-50%, -50%);/*will translate the element 
+		half of its width and height up to the left*/
+}
+
+.logo {
+	height: 100;
+	width: auto;
+	float: left; /*on the left*/
+	margin-top: 20px; 
+
+}
+
+.main-nav {
+	float: right; /*to be on the right*/
+	list-style: none; /*to take out the bullet form (dot) of the list*/
+	margin-top: 55px; /*to have space from browser*/
+}
+
+
+.main-nav li {
+	display: inline-block;  /*links to be side by side*/
+	margin-left: 40px;
+
+
+}
+/*all the a href in the li*/
+.main-nav li a:link,
+.main-nav li a:visited {
+	padding: 8px 0; /*top-bottom, left and right*/
+	color: #fff; /*color white*/
+	text-decoration: none; /*to delete the underline*/
+	text-transform: uppercase;
+	font-size: 90%; /*instead of 18px 18/20 = 0.9 , 20 coming from the parent html tag*/
+	border-bottom: 2px solid transparent; /* so its not visible if state = false*/
+	transition: border-bottom 0.2s;
+
+
+}
+
+/*#e67e22 orange color*/
+.main-nav li a:hover,
+.main-nav li a:active {
+	border-bottom: 2px solid #e67e22;
+
+
+}
+
+/*********MEALS***************/
+.meals-showcase {
+	list-style: none;
+	width: 100%;
+
+}
+
+.meals-showcase li {
+	display: block; /*to be as block*/ 
+	float: left; /*display side by side*/
+	width:25%; /*4 li elements so 25*4 = 100*/ 
+
+}
+
+.meal-photo {
+	width: 100%;
+	margin:0;
+}
+
+.meal-photo img {
+	width: 100%; 
+	height: auto;
+}
